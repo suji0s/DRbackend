@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const doctorSchema = Schema(
+const userSchema = Schema(
   {
     name: {
       type: String,
@@ -18,15 +18,12 @@ const doctorSchema = Schema(
       required: true,
       trim: true,
     },
-    specialization: {
+    email: {
       type: String,
       required: true,
       trim: true,
     },
-    department: {
-      type: Schema.Types.ObjectId,
-      ref: "Department",
-    },
+  
     password: {
       type: String,
       required: true,
@@ -34,6 +31,6 @@ const doctorSchema = Schema(
   },
   { timestamps: true }
 );
-const Doctor = model("Doctor", doctorSchema);
+const User = model("User", doctorSchema);
 
-export default Doctor;
+export default User;
